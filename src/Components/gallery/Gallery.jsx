@@ -1,5 +1,9 @@
 import * as React from "react";
 import { MasonryInfiniteGrid } from "@egjs/react-infinitegrid";
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
+
+
 
 // Simulate item data with image URLs
 function getItems(nextGroupKey, count) {
@@ -37,9 +41,9 @@ export default function Gallery() {
       
      <button
         onClick={toggleGalleryVisibility}
-        className=" bg-slate-900 text-white p-2 rounded"
+        className=" bg-slate-900 text-white p-2 rounded hover:bg-blue-800 hover:scale-110 transition-all duration-300"
       >
-        {isGalleryVisible ? "Hide Gallery" : "Show Gallery"}
+        {isGalleryVisible ? <FaEye  className="text-4xl "/> : <FaEyeSlash className="text-4xl " />}
       </button>
      </div>
 
