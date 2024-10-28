@@ -47,7 +47,8 @@ export default function PriceOption() {
             features: [
                 "All Basic Membership features",
                 "Discounted rates",
-                "Flexible hours for students"
+                "Flexible hours for students",
+                "Access to exclusive student events"
             ],
             img: "https://www.publicationacademy.org/wp-content/uploads/pa-icon-only.png"
         }
