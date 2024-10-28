@@ -5,6 +5,7 @@ import './App.css'
 import Navbar from './Components/Navbar'
 import PriceOption from './Components/PriceOption/PriceOption'
 import BarChat from './Components/Chart/BarChat'
+import CourasolComponent from './Components/Courasol/CourasolComponent'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,6 +13,7 @@ function App() {
   return (
    <div>
     <Navbar/>
+    <CourasolComponent/>
     <PriceOption/>
     <BarChat/>
    </div>
