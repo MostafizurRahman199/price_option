@@ -6,9 +6,10 @@ import Navbar from './Components/Navbar'
 import PriceOption from './Components/PriceOption/PriceOption'
 import BarChat from './Components/Chart/BarChat'
 import CourasolComponent from './Components/Courasol/CourasolComponent'
+import Gallery from './Components/gallery/Gallery'
 
 function App() {
-  const [count, setCount] = useState(0)
+ 
 
   return (
    <div>
@@ -16,6 +17,7 @@ function App() {
     <CourasolComponent/>
     <PriceOption/>
     <BarChat/>
+    <Gallery/>
    </div>
   )
 }
