@@ -7,6 +7,7 @@ import Home from './Components/Home/Home.jsx';
 import About from './Components/About/About.jsx';
 import Contact from './Components/Contact/Contact.jsx';
 import Service from './Components/Service/Service.jsx';
+import User from './Components/User/User.jsx';
 
 // Define the router with routes
 const router = createBrowserRouter([
@@ -29,6 +30,12 @@ const router = createBrowserRouter([
       {
         path: '/service',
         element: <Service />,
+      },
+      
+      {
+        path: '/users',
+        loader: ()=>fetch('users.json'),
+        element: <User />,
       },
       {
         path: '/', // Default route

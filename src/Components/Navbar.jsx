@@ -12,6 +12,7 @@ export default function Navbar() {
         { id: 3, routePath: '/service', routeName: 'Services' },
         { id: 4, routePath: '/portfolio', routeName: 'Portfolio' },
         { id: 5, routePath: '/contact', routeName: 'Contact' },
+        { id: 6, routePath: '/users', routeName: 'User' },
     ];
 
     return (
