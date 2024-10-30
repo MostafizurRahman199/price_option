@@ -1,12 +1,20 @@
 import "./App.css";
+
+import { FooterComponent } from "./Components/Footer/FooterComponent";
 import Navbar from "./Components/Navbar";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigation } from "react-router-dom";
 
 function App() {
+  const navigation = useNavigation();
   return (
-    <div>
+    <div className="">
       <Navbar />
-      <Outlet /> 
+     {
+      navigation.state === "loading" ? (<div className="flex justify-center mt-20">
+      <span className="loading loading-ring loading-lg"></span>
+      </div>): <Outlet /> 
+     }
+     <FooterComponent/>
     </div>
   );
 }

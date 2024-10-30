@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
 import { CiMenuBurger } from "react-icons/ci";
 import { HiXMark } from "react-icons/hi2";
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 export default function Navbar() {
+
+
+const style = {
+
+}
+
+
     const [toggle, setToggle] = useState(false);
 
     const routes = [
@@ -12,7 +19,8 @@ export default function Navbar() {
         { id: 3, routePath: '/service', routeName: 'Services' },
         { id: 4, routePath: '/portfolio', routeName: 'Portfolio' },
         { id: 5, routePath: '/contact', routeName: 'Contact' },
-        { id: 6, routePath: '/users', routeName: 'User' },
+        { id: 6, routePath: '/posts', routeName: 'Post' },
+        { id: 7, routePath: '/users', routeName: 'User' },
     ];
 
     return (
@@ -27,10 +35,10 @@ export default function Navbar() {
                 {
                     routes.map((route) => (
                         <li className='my-1' key={route.id}>
-                            <Link to={route.routePath}
-                                className='block bg-slate-300 text-blue md:bg-transparent md:text-white md:hover:bg-slate-400 rounded-lg p-2 transition-colors duration-300 ease-in-out hover:text-blue-950'>
+                            <NavLink to={route.routePath}
+                                className={({isActive})=>`block bg-slate-300 text-blue md:bg-transparent md:text-white rounded-lg p-2 transition-colors duration-300 ease-in-out  ${isActive ? "md:bg-slate-400 text-blue-950" : "md:hover:bg-slate-400 hover:text-blue-950"}`}>
                                 {route.routeName}
-                            </Link>
+                            </NavLink>
                         </li>
                     ))
                 }
@@ -38,3 +46,7 @@ export default function Navbar() {
         </nav>
     );
 }
+
+
+
+

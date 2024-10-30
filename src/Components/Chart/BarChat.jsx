@@ -70,7 +70,7 @@ export default function BarChat() {
       <YAxis />
       <Tooltip />
       <Legend />
-      <Bar dataKey="price" fill="#8884d8" activeBar={<Rectangle fill="white" stroke="" />} />
+      <Bar dataKey="price" fill="#8884d8" activeBar={<Rectangle fill="blue" stroke="" />} />
       <Bar dataKey="memberCount" fill="#82ca9d" activeBar={<Rectangle fill="orange" stroke="" />} />
     </BChart>
   </ResponsiveContainer>

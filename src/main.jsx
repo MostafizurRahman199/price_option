@@ -5,9 +5,12 @@ import App from './App.jsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './Components/Home/Home.jsx';
 import About from './Components/About/About.jsx';
-import Contact from './Components/Contact/Contact.jsx';
+import Contact, { handleFormData } from './Components/Contact/Contact.jsx';
 import Service from './Components/Service/Service.jsx';
 import User from './Components/User/User.jsx';
+import UserDetails from './Components/User/UserDetails.jsx';
+import Posts from './Components/Post/Posts.jsx';
+import PostDetails from './Components/Post/PostDetails.jsx';
 
 // Define the router with routes
 const router = createBrowserRouter([
@@ -25,6 +28,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/contact',
+        action: handleFormData,
         element: <Contact />,
       },
       {
@@ -34,8 +38,23 @@ const router = createBrowserRouter([
       
       {
         path: '/users',
-        loader: ()=>fetch('users.json'),
+        loader: ()=>fetch('https://raw.githubusercontent.com/MostafizurRahman199/users_demo/refs/heads/main/users.json'),
         element: <User />,
+      },
+      {
+        path: '/users/:id',
+        loader: ()=>fetch('./users.json'),
+        element: <UserDetails/>,
+      },
+      {
+        path: '/posts/',
+        loader: ()=>fetch('https://dummyjson.com/posts'),
+        element: <Posts/>,
+      },
+      {
+        path: '/posts/:id',
+        loader: ({params})=>fetch(`https://dummyjson.com/posts/${params.id}`),
+        element: <PostDetails/>,
       },
       {
         path: '/', // Default route
